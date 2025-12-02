@@ -1,0 +1,151 @@
+/* BODY: General page styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Main text color */
+    
+    /* Fondo del body (tu GIF) */
+    background-image: url(videofondo.gif);
+    background-size: cover; /* Ensures background image covers the header area */
+    background-attachment: fixed; /* Opcional: mantiene el GIF fijo al hacer scroll */
+}
+
+/* Main Header Styles (Background, centering) */
+.title {
+    /* */
+    font-style: italic;
+    width: auto;
+    background-image: url(hachas.png);
+    background-size: cover;
+    background-position: center -300px;
+    background-repeat: no-repeat;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #a0522d;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 0;
+    /* Transparencia base si la imagen de papel lo permite */
+    background-color: rgba(255, 255, 255, 0.6); 
+}
+
+/* Image inside the header (.title img) */
+.title img {
+    
+    width: 120px;
+    height: auto;
+    margin-top: 15px;
+    /* CORRECTION: Makes the image circular */
+    border-radius: 50%; 
+    border: 3px solid #a0522d;
+    background-color: rgba(255, 255, 255, 0.6);
+    
+}
+
+/* SECTION bienvenida: Introductory block styles */
+.welcome {
+    font-style: italic;
+    background-color: rgba(248, 248, 248, 0.6); 
+    padding: 30px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+/* SECTION artifacts: Catalog container styles */
+.artifacts {
+    
+    font-style: oblique;
+    background-color: rgba(211, 211, 211, 0.6); 
+    text-align: center;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CARD CONTAINER .tarjetas: CSS Grid Implementation (Your Role N° 2) */
+.tarjetas {
+    display: grid;
+    /* Fluid Grid: Automatically creates columns (min 280px wide) and adjusts number based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ARTICLE .tarjetas article: Individual card styles */
+.tarjetas article {
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: 1px solid #b8860b;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect: Lifts the card and changes border color */
+.tarjetas article:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: #ffd700;
+}
+
+/* Image inside the card */
+.tarjetas img {
+    width: 90px;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Alternate background colors for cards (maintaining your style logic) */
+.artifacts1, .artifacts3, .artifacts5, .artifacts7 {
+    font-style: italic;
+    text-shadow: 2px 2px 5px;
+    background-color: rgba(253, 245, 230, 0.6); 
+}
+.artifacts2, .artifacts4, .artifacts6, .artifacts8 {
+    font-style: italic;
+    text-shadow: 2px 2px 5px;
+    background-color: rgba(250, 235, 215, 0.6); 
+}
+
+/* FOOTER: Footer styles */
+footer {
+    background-color: rgba(75, 0, 130, 0.6); 
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVENESS: Media Query for small mobile devices  */
+@media (max-width: 500px) {
+    
+    /* Forces the grid into a single column for maximum text legibility on small phones */
+    .tarjetas {
+        grid-template-columns: 1fr; 
+        padding: 0 10px;
+    }
+
+    .title {
+        height: 180px;
+    }
+
+    .title h1 {
+        font-size: 2em; 
+    }
+    
+    .tarjetas article {
+        padding: 15px;
+    }
+}
